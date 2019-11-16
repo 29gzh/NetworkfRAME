@@ -1,0 +1,2 @@
+include ':app', ':common_base'
+rootProject.name='NetWorkFrame'
