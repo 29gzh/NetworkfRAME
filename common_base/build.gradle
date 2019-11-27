@@ -31,7 +31,7 @@ dependencies {
     androidTestImplementation rootProject.ext.testDeps["runner"]
     androidTestImplementation rootProject.ext.testDeps["espresso-core"]
     testImplementation rootProject.ext.testDeps["junit"]
-// Support库
+    // Support库
     api rootProject.ext.supportLibs
     // 网络请求库
     implementation rootProject.ext.networkLibs
