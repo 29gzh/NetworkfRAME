@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import org.greenrobot.eventbus.EventBus
-import org.greenrobot.eventbus.Subscribe
-import org.greenrobot.eventbus.ThreadMode
 
 /**
  * @author ziheng
@@ -30,7 +28,10 @@ abstract class BaseFragment :Fragment(){
             EventBus.getDefault().register(this)
         }
         isViewPrepare = true
+        initView(view)
     }
+
+    abstract fun initView(view: View)
 
     abstract fun attachLayoutRes(): Int
 

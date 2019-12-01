@@ -1,2 +1,2 @@
-include ':app', ':common_base', ':module_homepage'
+include ':app', ':common_base', ':module_homepage', ':module_mine', ':module_message'
 rootProject.name='NetWorkFrame'
