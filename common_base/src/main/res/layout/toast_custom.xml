@@ -10,11 +10,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/bg_toast_custom"
-        android:paddingBottom="@dimen/dp_24"
-        android:paddingLeft="@dimen/dp_20"
-        android:paddingRight="@dimen/dp_20"
-        android:paddingTop="@dimen/dp_24"
+        android:paddingBottom="24dp"
+        android:paddingLeft="20dp"
+        android:paddingRight="20dp"
+        android:paddingTop="20dp"
         android:textColor="@color/white"
-        android:textSize="@dimen/sp_14" />
+        android:textSize="14sp" />
 
 </LinearLayout>

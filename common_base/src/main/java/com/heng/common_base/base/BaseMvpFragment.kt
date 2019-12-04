@@ -35,14 +35,14 @@ abstract class BaseMvpFragment<in V: IView,P: IPersenter<V>>: BaseFragment(),IVi
     }
 
     override fun showDefaultMsg(msg: String) {
-        showToast(msg)
+        //showToast(msg)
     }
 
     override fun showMsg(msg: String) {
-        showToast(msg)
+        //showToast(msg)
     }
 
     override fun showError(errorMsg: String) {
-        showToast(errorMsg)
+        //showToast(errorMsg)
     }
 }

@@ -2,10 +2,12 @@ package com.heng.networkframe
 
 import android.os.Bundle
 import android.support.v4.app.FragmentTransaction
+import com.flyco.tablayout.listener.CustomTabEntity
 import com.heng.common_base.base.BaseActivity
 import com.heng.module_homepage.ui.fragment.HomePageFragment
 import com.heng.module_message.ui.fragment.MessageFragment
 import com.heng.module_mine.ui.fragment.MineFragment
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : BaseActivity() {
 
@@ -29,10 +31,14 @@ class MainActivity : BaseActivity() {
     }
     override fun initView() {
         showFragment(mIndex)
+
+        //ArrayList<CustomTabEntity>()
+
+        //tabLayout.setTabData()
+
     }
 
     override fun initData() {
-
     }
 
     override fun onClickListener() {

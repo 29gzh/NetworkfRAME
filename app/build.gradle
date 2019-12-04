@@ -3,6 +3,7 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
@@ -32,10 +33,13 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation 'com.flyco.tablayout:FlycoTabLayout_Lib:2.1.2@aar'
     implementation project(':common_base')
-    implementation project(':module_homepage')
-    implementation project(':module_mine')
-    implementation project(':module_message')
+    if(!Boolean.valueOf(rootProject.ext.isModule)){
+        implementation project(':module_homepage')
+        implementation project(':module_mine')
+        implementation project(':module_message')
+    }
+
 
 }
