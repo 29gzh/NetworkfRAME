@@ -5,6 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.heng.common_base.eventbus.EventMessageBean
 import org.greenrobot.eventbus.EventBus
 import org.greenrobot.eventbus.Subscribe
 import org.greenrobot.eventbus.ThreadMode
@@ -38,7 +39,7 @@ abstract class BaseFragment :Fragment(){
     abstract fun attachLayoutRes(): Int
 
     @Subscribe(threadMode = ThreadMode.MAIN)
-    fun getEventMessage(eventMessage: String){
+    fun getEventMessage(eventMessage: EventMessageBean){
 
     }
 

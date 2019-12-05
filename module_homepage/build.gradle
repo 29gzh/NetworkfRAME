@@ -3,11 +3,17 @@ if(Boolean.valueOf(rootProject.ext.isModule)){
 }else {
     apply plugin: 'com.android.library'
 }
+apply from: rootProject.file('moudle_base.gradle')
+
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
-
+apply plugin: "kotlin-noarg"
 apply plugin: 'kotlin-kapt'
 android {
+
+    androidExtensions {
+        experimental = true
+    }
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
 
@@ -17,6 +23,7 @@ android {
         targetSdkVersion rootProject.ext.android.targetSdkVersion
         versionCode rootProject.ext.android.versionCode
         versionName rootProject.ext.android.versionName
+        javaCompileOptions { annotationProcessorOptions { includeCompileClasspath = true } }
     }
 
     buildTypes {
@@ -26,10 +33,17 @@ android {
         }
     }
 
+    allOpen {
+        annotation("com.heng.common_base.bean.NoArg")
+    }
+    noArg {
+        annotation("com.heng.common_base.bean.NoArg")
+    }
+
 }
 
 dependencies {
-
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':common_base')
 
 }

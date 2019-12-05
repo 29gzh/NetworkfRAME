@@ -4,8 +4,13 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'kotlin-kapt'
-apply from: rootProject.file('config.gradle')
+apply plugin: "kotlin-noarg"
+apply from: rootProject.file('moudle_base.gradle')
+
 android {
+    androidExtensions {
+        experimental = true
+    }
     compileSdkVersion rootProject.ext.android.compileSdkVersion
     buildToolsVersion rootProject.ext.android.buildToolsVersion
 
@@ -24,29 +29,36 @@ android {
         }
     }
 
+    allOpen {
+        annotation("com.heng.common_base.bean.NoArg")
+    }
+    noArg {
+        annotation("com.heng.common_base.bean.NoArg")
+    }
+
 }
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
-    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     configurations {
         all*.exclude group: 'com.android.support', module: 'support-v13'
     }
 
-    androidTestImplementation rootProject.ext.testDeps["runner"]
-    androidTestImplementation rootProject.ext.testDeps["espresso-core"]
-    testImplementation rootProject.ext.testDeps["junit"]
+    api rootProject.ext.testDeps["runner"]
+    api rootProject.ext.testDeps["espresso-core"]
+    api rootProject.ext.testDeps["junit"]
     // Support库
     api rootProject.ext.supportLibs
     // 网络请求库
-    implementation rootProject.ext.networkLibs
+    api rootProject.ext.networkLibs
     // RxJava2
-    implementation rootProject.ext.rxJavaLibs
-    implementation rootProject.ext.commonLibs
+    api rootProject.ext.rxJavaLibs
+    api rootProject.ext.commonLibs
     // APT dependencies(Kotlin内置的注解处理器)
-    annotationProcessor rootProject.ext.annotationProcessorLibs
+    api rootProject.ext.annotationProcessorLibs
     //GlideOkHttp
-    implementation(rootProject.ext.otherDeps["glideOkhttp"]) {
+    api (rootProject.ext.otherDeps["glideOkhttp"]) {
         exclude group: 'glide-parent'
     }
     debugImplementation rootProject.ext.testDeps["debug-db"]

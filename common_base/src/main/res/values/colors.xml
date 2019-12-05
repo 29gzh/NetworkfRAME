@@ -67,5 +67,7 @@
     <color name="Grey700">#616161</color>
     <color name="Grey800">#424242</color>
     <color name="Grey900">#212121</color>
+    <color name="DF6250">#DF6250</color>
+    <color name="color_333333">#333333</color>
 
 </resources>
