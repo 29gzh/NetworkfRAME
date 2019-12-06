@@ -20,7 +20,11 @@ android {
         vectorDrawables.useSupportLibrary = true
         multiDexEnabled true
 
-
+        javaCompileOptions {
+            annotationProcessorOptions {
+                includeCompileClasspath = true
+            }
+        }
 
     }
     buildTypes {

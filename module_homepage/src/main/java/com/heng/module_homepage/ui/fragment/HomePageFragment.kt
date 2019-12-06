@@ -1,15 +1,22 @@
 package com.heng.module_homepage.ui.fragment
 
+import android.content.Intent
+import android.support.v4.app.ActivityOptionsCompat
 import android.view.View
+import android.widget.ImageView
 import com.heng.common_base.base.BaseMvpFragment
 import com.heng.common_base.bean.DataBean
 import com.heng.common_base.eventbus.EventBusTag
 import com.heng.common_base.eventbus.EventMessageBean
 import com.heng.module_homepage.R
+import com.heng.module_homepage.custom.CustomTitleTabLayout
 import com.heng.module_homepage.mvp.contract.HomePageContract
 import com.heng.module_homepage.mvp.persenter.HomePagePersenter
+import com.heng.module_homepage.ui.activity.ImageViewActivity
 import kotlinx.android.synthetic.main.fragment_homepage.*
+import kotlinx.android.synthetic.main.fragment_homepage.view.*
 import org.greenrobot.eventbus.EventBus
+import org.jetbrains.anko.image
 
 
 /**
@@ -41,7 +48,13 @@ class HomePageFragment: BaseMvpFragment<HomePageContract.View,HomePageContract.P
             }catch (e: Exception){
                 e.printStackTrace()
             }
+        }
 
+        circular_image.setOnClickListener {
+            Intent(activity,ImageViewActivity::class.java).run {
+                startActivity(this,
+                    ActivityOptionsCompat.makeSceneTransitionAnimation(activity!!, circular_image, "image").toBundle())
+            }
         }
 
 

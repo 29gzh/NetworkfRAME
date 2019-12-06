@@ -3,15 +3,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/Amber"
+    android:orientation="vertical"
+    android:id="@+id/linear_view"
     >
 
+<com.heng.module_homepage.custom.CustomImageLayout
+    android:id="@+id/circular_image"
+    android:layout_width="200dp"
+    android:layout_height="300dp"
+    android:layout_gravity="center"
+    android:transitionName="image"
+    />
 <TextView
     android:id="@+id/txt_clearn"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:text="清楚角标"
     android:padding="50dp"
-    android:layout_gravity="center_vertical"
     android:background="@color/White"
     />
 

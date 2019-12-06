@@ -3,7 +3,7 @@
 
 
     <application>
-
+        <activity android:name=".ui.activity.ImageViewActivity"/>
 
     </application>
 
